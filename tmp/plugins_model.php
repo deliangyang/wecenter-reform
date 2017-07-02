@@ -1,0 +1,1 @@
+a:2:{s:18:"aws_external_class";s:88:"/Users/deliang/Work/waibao/wecenter-preform/UPLOAD/plugins/aws_external/aws_external.php";s:26:"aws_offical_external_class";s:104:"/Users/deliang/Work/waibao/wecenter-preform/UPLOAD/plugins/aws_offical_external/aws_offical_external.php";}
