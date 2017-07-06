@@ -324,8 +324,8 @@ class publish_class extends AWS_MODEL
 	{
 		if ($article_id = $this->insert('article', array(
 			'uid' => intval($uid),
-			'title' => htmlspecialchars($title),
-			'message' => htmlspecialchars($message),
+			'title' => remove_xss($title),
+			'message' => remove_xss($message),
 			'category_id' => intval($category_id),
 			'add_time' => time()
 		)))

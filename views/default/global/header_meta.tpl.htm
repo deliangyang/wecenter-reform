@@ -56,6 +56,12 @@
 <!--[if lte IE 8]>
 	<script type="text/javascript" src="<?php echo G_STATIC_URL; ?>/js/respond.js"></script>
 <![endif]-->
+
+    <?php if (get_setting('advanced_editor_enable') == 'W') { ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo G_STATIC_URL; ?>/editor/wangEditor.min.css" />
+        <script type="text/javascript" src="<?php echo G_STATIC_URL; ?>/editor/wangEditor.min.js"></script>
+    <?php } ?>
+
 </head>
 <noscript unselectable="on" id="noscript">
     <div class="aw-404 aw-404-wrap container">

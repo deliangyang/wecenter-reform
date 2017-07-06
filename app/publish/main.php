@@ -53,8 +53,8 @@ class main extends AWS_CONTROLLER
 		else if ($this->is_post() AND $_POST['question_detail'])
 		{
 			$question_info = array(
-				'question_content' => htmlspecialchars($_POST['question_content']),
-				'question_detail' => htmlspecialchars($_POST['question_detail']),
+				'question_content' => remove_xss($_POST['question_content']),
+				'question_detail' => remove_xss($_POST['question_detail']),
 				'category_id' => intval($_POST['category_id'])
 			);
 		}
@@ -63,8 +63,8 @@ class main extends AWS_CONTROLLER
 			$draft_content = $this->model('draft')->get_data(1, 'question', $this->user_id);
 
 			$question_info = array(
-				'question_content' => htmlspecialchars($_POST['question_content']),
-				'question_detail' => htmlspecialchars($draft_content['message'])
+				'question_content' => remove_xss($_POST['question_content']),
+				'question_detail' => remove_xss($draft_content['message'])
 			);
 		}
 
@@ -138,8 +138,8 @@ class main extends AWS_CONTROLLER
 		else if ($this->is_post() AND $_POST['message'])
 		{
 			$article_info = array(
-				'title' => htmlspecialchars($_POST['title']),
-				'message' => htmlspecialchars($_POST['message']),
+				'title' => remove_xss($_POST['title']),
+				'message' => remove_xss($_POST['message']),
 				'category_id' => intval($_POST['category_id'])
 			);
 		}
@@ -148,8 +148,8 @@ class main extends AWS_CONTROLLER
 			$draft_content = $this->model('draft')->get_data(1, 'article', $this->user_id);
 
 			$article_info =  array(
-				'title' => htmlspecialchars($_POST['title']),
-				'message' => htmlspecialchars($draft_content['message'])
+				'title' => remove_xss($_POST['title']),
+				'message' => remove_xss($draft_content['message'])
 			);
 		}
 

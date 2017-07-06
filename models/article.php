@@ -192,11 +192,11 @@ class article_class extends AWS_MODEL
 			}
 		}
 
-		$this->model('search_fulltext')->push_index('article', htmlspecialchars($title), $article_info['id']);
+		$this->model('search_fulltext')->push_index('article', remove_xss($title), $article_info['id']);
 
 		$this->update('article', array(
-			'title' => htmlspecialchars($title),
-			'message' => htmlspecialchars($message),
+			'title' => remove_xss($title),
+			'message' => remove_xss($message),
 			'category_id' => intval($category_id)
 		), 'id = ' . intval($article_id));
 

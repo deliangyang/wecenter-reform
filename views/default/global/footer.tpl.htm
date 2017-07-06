@@ -14,6 +14,43 @@
 	</div>
 </div>
 
+<style>
+    .aw-back-tp{position:fixed;display:block;left:50%;bottom:100px;z-index:1;margin-left:520px;}
+    .aw-back-tp > li{list-style:none;background:#fff;margin-bottom:10px;}
+    .aw-back-tp > li > a{width:45px;height:45px;display:block;background-image: url('static/css/default/img/backnav.png');}
+    .aw-back-tp .icon-up,.aw-back-tp .icon-edit,.aw-back-tp .icon-location{display:block;padding:5px;background:#fff;color:#fa6419;font-size:20px;margin:0 0 10px 0;border:1px solid #ccc;box-shadow:0 0 5px #ccc;}
+    .aw-back-tp .icon-up:hover,.aw-back-tp .icon-edit:hover,.aw-back-tp .icon-location:hover{background:#fa6419;color:#fff;}
+    .map-list{display:none; position:absolute;width: 800px;height: 500px; background:#fff;right: 100%;bottom: 0;border: 3px solid #5BA7F4;border-radius: 10px;padding: 20px;}
+    .wzdh:hover .map-list{display:block;}
+    .fhdb a{background-position:0 45px;}
+    .bzzx a{background-position:0 90px;}
+    .wzdh a{background-position:0 135px;}
+    .fxjy a{background-position:0 180px;}
+    .wytw a{background-position:0 225px;}
+    .fhdb a:hover{background-position:45px 45px;}
+    .bzzx a:hover{background-position:45px 90px;}
+    .wzdh a:hover{background-position:45px 135px;}
+    .fxjy a:hover{background-position:45px 180px;}
+    .wytw a:hover{background-position:45px 225px;}
+</style>
+
+<div class="aw-back-tp hidden-xs">
+
+    <li class="wytw">
+        <a id="header_publish" href="/index.php/?/publish/"></a>
+    </li>
+    <li class="fxjy">
+        <a href="/index.php/?/publish/article/"></a>
+    </li>
+    <li class="bzzx">
+        <a href="/index.php/?/help/"></a>
+    </li>
+    <li class="fhdb">
+        <a href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});"></a>
+    </li>
+</div>
+
+
 <a class="aw-back-top hidden-xs" href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});"><i class="icon icon-up"></i></a>
 
 <?php echo get_setting('statistic_code'); ?>

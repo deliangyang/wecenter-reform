@@ -124,8 +124,8 @@ class question_class extends AWS_MODEL
 		$now = time();
 
 		$to_save_question = array(
-			'question_content' => htmlspecialchars($question_content),
-			'question_detail' => htmlspecialchars($question_detail),
+			'question_content' => remove_xss($question_content),
+			'question_detail' => remove_xss($question_detail),
 			'add_time' => $now,
 			'update_time' => $now,
 			'published_uid' => intval($published_uid),
@@ -169,11 +169,11 @@ class question_class extends AWS_MODEL
 
 		if ($verified)
 		{
-			$data['question_detail'] = htmlspecialchars($question_detail);
+			$data['question_detail'] = remove_xss($question_detail);
 
 			if ($question_content)
 			{
-				$data['question_content'] = htmlspecialchars($question_content);
+				$data['question_content'] = remove_xss($question_content);
 			}
 
 			$this->model('search_fulltext')->push_index('question', $question_content, $question_id);

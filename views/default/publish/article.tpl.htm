@@ -50,8 +50,13 @@
 								<div class="aw-mod aw-editor-box">
 									<div class="mod-head">
 										<div class="wmd-panel">
-											<textarea class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="message"><?php echo $this->article_info['message']; ?></textarea>
-								        </div>
+                                            <?php if (get_setting('advanced_editor_enable') == 'W') { ?>
+                                                <div id="wmd-input1"></div>
+											    <textarea style="display: none" class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="message"><?php echo $this->article_info['message']; ?></textarea>
+                                            <?php } else { ?>
+                                                <textarea class="wmd-input form-control autosize editor" id="wmd-input" rows="15" name="message"><?php echo $this->article_info['message']; ?></textarea>
+                                            <?php } ?>
+                                        </div>
 									</div>
 									<div class="mod-body">
 										<p class="text-color-999"><span class="pull-right" id="question_detail_message">&nbsp;</span></p>
@@ -153,6 +158,18 @@
 		</div>
 	</div>
 </div>
+
+<?php if (get_setting('advanced_editor_enable') == 'W') { ?>
+<script type="text/javascript">
+    var editor = new wangEditor('#wmd-input1');
+    editor.customConfig.onchange = function (html) {
+        // html 即变化之后的内容
+        $('#wmd-input').val(html);
+    }
+    editor.create();
+    editor.txt.html('<?php echo $this->article_info['message']; ?>');
+</script>
+<?php } ?>
 
 <script type="text/javascript">
 	var ATTACH_ACCESS_KEY = '<?php echo $this->attach_access_key; ?>';
