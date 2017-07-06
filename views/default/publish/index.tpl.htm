@@ -172,6 +172,7 @@
 <?php if (get_setting('advanced_editor_enable') == 'W') { ?>
 <script type="text/javascript">
     var editor = new wangEditor('#wmd-input1');
+    editor.customConfig.uploadImgShowBase64 = true   // 使用 base64 保存图片
     editor.customConfig.onchange = function (html) {
         // html 即变化之后的内容
         $('#wmd-input').val(html);
